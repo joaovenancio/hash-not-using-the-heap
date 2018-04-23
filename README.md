@@ -1,6 +1,6 @@
 # Data Structure: Hash in Java using Genercis without the Heap
 
-A work from university to make an Hash data structure in Java usign Generics and not using the heap (or dinamic allocation in the case of using Java). This work will be used to gain aproval in the subject INE 5609-03238A, Data Structure. The repositry have two Folders: One with the explanation of why I decided to make the Hash in the way I did, and, in the other one, it has the Project with the java code.
+A work from university to make an Hash data structure in Java without using the heap (or dynamic allocation in the case of using Java). This work will be used to gain aproval in the subject INE 5609-03238A, Data Structure. The repositry have two Folders: One with the explanation of why I decided to make the Hash in the way I did, and, in the other one, it has the Project with the java code.
 
 # Estrutura de Dados: Hash em Java usando Generics e sem usar a Heap
 
