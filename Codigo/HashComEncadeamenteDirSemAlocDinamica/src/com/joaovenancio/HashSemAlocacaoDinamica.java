@@ -39,7 +39,7 @@ public class HashSemAlocacaoDinamica <E extends IHash>{
                 int proximoLivre = this.primeiroLivre;
                 this.dados[this.primeiroLivre].setProximoPacote(this.dados[grupo].getProximoPacote());
                 this.dados[grupo].setProximoPacote(this.primeiroLivre);
-                if (this.primeiroLivre == this.ultimoPacoteLivre) { //Se por acaso o primeiro livre for o ultimo livre tambem:
+                if (this.primeiroLivre == this.ultimoPacoteLivre) { //Se por acaso o primeiro livre for o ultimo livre tambem, deve-se manter as duas variaveis atualizadas:
                     this.ultimoPacoteLivre = -1;
                     this.primeiroLivre = -1;
                 } else {
