@@ -25,6 +25,10 @@ public class HashSemAlocacaoDinamica <E extends IHash>{
 
     //Metodos:
     public void adicionar (E novoDado) throws RuntimeException {
+        if (this.qtdElementos == this.dados.length) {
+            throw new RuntimeException("Não tem mais espaço na Hash.");
+        }
+
         int grupo = this.funcaoHash(novoDado.getID());
         if (this.dados[grupo] == null) { //Ver se existe um primeiro valor para o grupo:
             this.dados[grupo] = new PacoteDados(novoDado, -1);
@@ -35,7 +39,12 @@ public class HashSemAlocacaoDinamica <E extends IHash>{
                 int proximoLivre = this.primeiroLivre;
                 this.dados[this.primeiroLivre].setProximoPacote(this.dados[grupo].getProximoPacote());
                 this.dados[grupo].setProximoPacote(this.primeiroLivre);
-                this.primeiroLivre = this.dados[proximoLivre].getProximoPacote();
+                if (this.primeiroLivre == this.ultimoPacoteLivre) { //Se por acaso o primeiro livre for o ultimo livre tambem:
+                    this.ultimoPacoteLivre = -1;
+                    this.primeiroLivre = -1;
+                } else {
+                    this.primeiroLivre = this.dados[proximoLivre].getProximoPacote();
+                }
                 this.qtdElementos++;
             } else { //Se nao tiver:
                 throw new RuntimeException("Não tem mais espaço na Hash.");
