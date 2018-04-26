@@ -13,10 +13,10 @@ public class HashSemAlocacaoDinamica <E extends IHash>{
         this.dados = new PacoteDados[qtdGrupos+espacoDeTratamentoDeColisao];
         this.valorHash = qtdGrupos;
         this.qtdElementos = 0;
+        int encadeamentoLivre = qtdGrupos+1;
         for (int i = qtdGrupos; i <= qtdGrupos+espacoDeTratamentoDeColisao-1; i++) {
-            int encademantoLivres = qtdGrupos++;
-            this.dados[i] = new PacoteDados(null,encademantoLivres);
-            encademantoLivres++;
+            this.dados[i] = new PacoteDados(null,encadeamentoLivre);
+            encadeamentoLivre++;
         }
         this.ultimoPacoteLivre = this.dados.length-1;
         this.dados[this.dados.length-1].setProximoPacote(-1);
